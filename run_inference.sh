@@ -87,3 +87,4 @@ else
 fi
 
 echo "Completed run_inference.sh"
+# Tune OpenSora sampling rate for smoother motion [2024-08-29T12:11:00]
