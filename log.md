@@ -36,3 +36,4 @@
 - Refactor folder layout for consistency
 - Test full end-to-end generation and display
 - Polish final details before release
+- Initialize backend structure
