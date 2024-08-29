@@ -36,3 +36,4 @@ HF_TOKEN=<your-hf-token>
 ```
 
 Then, open your browser at http://<instance_IP>:8000/
+# Add OpenSora inference script [2024-08-29T10:47:00]
