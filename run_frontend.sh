@@ -47,3 +47,5 @@ echo "Refreshed db.csv"
 echo "Running frontend server"
 cd frontend
 ../venv/bin/python3 -m http.server 8000
+
+# Fix bug in OpenSora video resolution config [2024-08-29T09:41:00]
