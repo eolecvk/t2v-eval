@@ -37,3 +37,4 @@
 - Test full end-to-end generation and display
 - Polish final details before release
 - Initialize backend structure
+- Set up inference script for OpenSora
