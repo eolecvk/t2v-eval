@@ -1,3 +1,4 @@
 
 - Initialize backend structure
 - Set up inference script for OpenSora
+- Add basic config for OpenSora model
