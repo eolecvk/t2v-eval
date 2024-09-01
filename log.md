@@ -39,3 +39,4 @@
 - Initialize backend structure
 - Set up inference script for OpenSora
 - Add basic config for OpenSora model
+- Implement video upload to S3 for OpenSora
