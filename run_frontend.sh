@@ -49,3 +49,5 @@ cd frontend
 ../venv/bin/python3 -m http.server 8000
 
 # Fix bug in OpenSora video resolution config [2024-08-29T09:41:00]
+
+# Update CogVideo prompts for diversity [2024-09-02T15:26:00]
