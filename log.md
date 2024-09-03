@@ -3,3 +3,4 @@
 - Add basic config for OpenSora model
 - Implement video upload to S3 for OpenSora
 - Test video generation for OpenSora prompts
+- Refactor OpenSora inference pipeline
