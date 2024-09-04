@@ -42,3 +42,4 @@
 - Implement video upload to S3 for OpenSora
 - Test video generation for OpenSora prompts
 - Refactor OpenSora inference pipeline
+- Add PyramidFlow model folder structure
