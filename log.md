@@ -5,3 +5,4 @@
 - Test video generation for OpenSora prompts
 - Refactor OpenSora inference pipeline
 - Add PyramidFlow model folder structure
+- Configure PyramidFlow inference script
