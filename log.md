@@ -7,3 +7,4 @@
 - Refactor OpenSora inference pipeline
 - Add PyramidFlow model folder structure
 - Configure PyramidFlow inference script
+- Generate and upload PyramidFlow videos
