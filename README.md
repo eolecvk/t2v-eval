@@ -41,3 +41,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Refactor CogVideo inference pipeline [2024-08-31T12:55:00]
 
 # Adjust PyramidFlow latent noise scale [2024-09-04T11:41:00]
+
+# Unify inference entrypoint for all models [2024-09-07T15:50:00]
