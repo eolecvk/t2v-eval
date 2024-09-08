@@ -8,3 +8,4 @@
 - Configure PyramidFlow inference script
 - Generate and upload PyramidFlow videos
 - Refactor S3 utility functions
+- Improve PyramidFlow output quality
