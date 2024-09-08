@@ -4,3 +4,5 @@
 # Improve CogVideo consistency with fixed seed [2024-09-02T12:54:00]
 
 # Evaluate PyramidFlow across 5 prompt types [2024-09-04T15:24:00]
+
+# Add duration limit per model run [2024-09-08T18:17:00]
