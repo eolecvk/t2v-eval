@@ -48,3 +48,4 @@
 - Refactor S3 utility functions
 - Improve PyramidFlow output quality
 - Add CogVideo model and inference wrapper
+- Generate sample videos for CogVideo
