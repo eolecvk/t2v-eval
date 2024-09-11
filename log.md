@@ -49,3 +49,4 @@
 - Improve PyramidFlow output quality
 - Add CogVideo model and inference wrapper
 - Generate sample videos for CogVideo
+- Fix CogVideo inference issues
