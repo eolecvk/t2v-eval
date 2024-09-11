@@ -57,3 +57,5 @@ cd frontend
 # Log GPU memory usage for each model [2024-09-07T14:16:00]
 
 # Add S3 upload retry logic for robustness [2024-09-09T09:30:00]
+
+# Improve CSS for mobile responsiveness [2024-09-11T17:34:00]
