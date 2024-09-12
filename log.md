@@ -12,3 +12,4 @@
 - Add CogVideo model and inference wrapper
 - Generate sample videos for CogVideo
 - Fix CogVideo inference issues
+- Add video metadata logging to CSV
