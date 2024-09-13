@@ -8,3 +8,5 @@
 # Improve error handling across all models [2024-09-08T10:23:00]
 
 # Store generation logs alongside S3 videos [2024-09-10T10:33:00]
+
+# Fix video playback glitch on Chrome [2024-09-13T10:49:00]
