@@ -51,3 +51,4 @@
 - Generate sample videos for CogVideo
 - Fix CogVideo inference issues
 - Add video metadata logging to CSV
+- Build initial frontend layout
