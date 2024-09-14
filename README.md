@@ -47,3 +47,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Clean up old S3 buckets for stale models [2024-09-09T17:41:00]
 
 # Implement lazy loading for videos on scroll [2024-09-10T12:56:00]
+
+# Add toggle for showing only recent generations [2024-09-14T17:30:00]
