@@ -14,3 +14,4 @@
 - Fix CogVideo inference issues
 - Add video metadata logging to CSV
 - Build initial frontend layout
+- Connect frontend to fetch videos from S3
