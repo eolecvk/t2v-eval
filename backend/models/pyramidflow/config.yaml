@@ -10,3 +10,5 @@
 # Store generation logs alongside S3 videos [2024-09-10T10:33:00]
 
 # Fix video playback glitch on Chrome [2024-09-13T10:49:00]
+
+# Add usage example to README for inference script [2024-09-15T15:28:00]
