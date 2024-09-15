@@ -15,3 +15,4 @@
 - Add video metadata logging to CSV
 - Build initial frontend layout
 - Connect frontend to fetch videos from S3
+- Add model selector dropdown to frontend
