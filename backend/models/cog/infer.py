@@ -10,3 +10,5 @@
 # Build grid layout for model comparison UI [2024-09-10T10:56:00]
 
 # Optimize frontend load time by batching thumbnails [2024-09-13T14:20:00]
+
+# Document run_frontend.sh requirements [2024-09-16T11:15:00]
