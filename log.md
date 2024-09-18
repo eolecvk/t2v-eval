@@ -19,3 +19,4 @@
 - Add model selector dropdown to frontend
 - Improve grid layout and responsiveness
 - Refactor frontend JS to support pagination
+- Update README with usage instructions
