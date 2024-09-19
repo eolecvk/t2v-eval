@@ -12,3 +12,5 @@
 # Optimize frontend load time by batching thumbnails [2024-09-13T14:20:00]
 
 # Document run_frontend.sh requirements [2024-09-16T11:15:00]
+
+# Refactor prompt input to support special tokens [2024-09-19T12:51:00]
