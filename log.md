@@ -20,3 +20,4 @@
 - Refactor frontend JS to support pagination
 - Update README with usage instructions
 - Fix broken links in frontend
+- Enable frontend model comparison feature
