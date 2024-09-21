@@ -59,3 +59,4 @@
 - Update README with usage instructions
 - Fix broken links in frontend
 - Enable frontend model comparison feature
+- Improve frontend load performance
