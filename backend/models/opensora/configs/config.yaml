@@ -14,3 +14,5 @@
 # Clarify AWS + HuggingFace setup steps in README [2024-09-14T10:49:00]
 
 # Add test prompts covering weather and lighting changes [2024-09-18T15:18:00]
+
+# Run black formatter on backend scripts [2024-09-21T11:26:00]
