@@ -22,3 +22,4 @@
 - Fix broken links in frontend
 - Enable frontend model comparison feature
 - Improve frontend load performance
+- Add prompt-to-video mapping table
