@@ -53,3 +53,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Create .env template with example values [2024-09-17T16:57:00]
 
 # Test long descriptive prompts across all models [2024-09-20T18:30:00]
+
+# Add video resolution check to CI step [2024-09-23T09:57:00]
