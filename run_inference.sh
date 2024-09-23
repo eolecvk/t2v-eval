@@ -104,3 +104,5 @@ echo "Completed run_inference.sh"
 # Add notes on EC2 setup for deployment [2024-09-17T16:11:00]
 
 # Add cinematic scene prompts for realism comparison [2024-09-20T09:00:00]
+
+# Fix bash permission on run_inference.sh [2024-09-23T09:03:00]
