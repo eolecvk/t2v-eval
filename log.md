@@ -24,3 +24,4 @@
 - Enable frontend model comparison feature
 - Improve frontend load performance
 - Add prompt-to-video mapping table
+- Polish frontend UI spacing and fonts
