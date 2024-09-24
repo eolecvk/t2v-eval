@@ -24,3 +24,4 @@
 - Improve frontend load performance
 - Add prompt-to-video mapping table
 - Polish frontend UI spacing and fonts
+- Add tab for side-by-side comparisons
