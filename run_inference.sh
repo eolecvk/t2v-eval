@@ -106,3 +106,5 @@ echo "Completed run_inference.sh"
 # Add cinematic scene prompts for realism comparison [2024-09-20T09:00:00]
 
 # Fix bash permission on run_inference.sh [2024-09-23T09:03:00]
+
+# Tune OpenSora sampling rate for smoother motion [2024-09-24T11:11:00]
