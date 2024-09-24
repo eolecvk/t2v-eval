@@ -67,3 +67,5 @@ cd frontend
 # Remove duplicate prompts from test set [2024-09-21T11:49:00]
 
 # Pin torch version for consistent inference results [2024-09-23T14:44:00]
+
+# Fix bug in OpenSora video resolution config [2024-09-24T17:00:00]
