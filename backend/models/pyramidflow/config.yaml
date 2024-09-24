@@ -16,3 +16,5 @@
 # Evaluate each model with identical prompt set [2024-09-19T17:25:00]
 
 # Fix import warnings in utils.py [2024-09-21T14:59:00]
+
+# Add OpenSora preset for 16:9 format [2024-09-24T14:43:00]
