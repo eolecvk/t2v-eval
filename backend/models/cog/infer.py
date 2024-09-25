@@ -16,3 +16,5 @@
 # Refactor prompt input to support special tokens [2024-09-19T12:51:00]
 
 # Move common constants to shared config [2024-09-22T14:58:00]
+
+# Integrate OpenSora into run_inference.sh [2024-09-25T10:56:00]
