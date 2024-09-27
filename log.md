@@ -28,3 +28,4 @@
 - Add tab for side-by-side comparisons
 - Refactor CSS for consistent styling
 - Fix bug with missing video previews
+- Enable inference via CLI argument parsing
