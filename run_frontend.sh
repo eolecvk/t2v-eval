@@ -69,3 +69,5 @@ cd frontend
 # Pin torch version for consistent inference results [2024-09-23T14:44:00]
 
 # Fix bug in OpenSora video resolution config [2024-09-24T17:00:00]
+
+# Update CogVideo prompts for diversity [2024-09-27T16:48:00]
