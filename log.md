@@ -28,3 +28,4 @@
 - Refactor CSS for consistent styling
 - Fix bug with missing video previews
 - Enable inference via CLI argument parsing
+- Improve OpenSora config loading logic
