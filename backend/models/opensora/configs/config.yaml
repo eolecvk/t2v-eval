@@ -18,3 +18,5 @@
 # Run black formatter on backend scripts [2024-09-21T11:26:00]
 
 # Optimize OpenSora batch size for faster inference [2024-09-24T16:57:00]
+
+# Improve CogVideo consistency with fixed seed [2024-09-28T15:06:00]
