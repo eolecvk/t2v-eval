@@ -110,3 +110,5 @@ echo "Completed run_inference.sh"
 # Tune OpenSora sampling rate for smoother motion [2024-09-24T11:11:00]
 
 # Fix CogVideo FPS output issue [2024-09-26T13:36:00]
+
+# Fix PyramidFlow memory leak on long prompts [2024-09-29T10:09:00]
