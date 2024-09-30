@@ -31,3 +31,4 @@
 - Enable inference via CLI argument parsing
 - Improve OpenSora config loading logic
 - Update run_frontend.sh for production use
+- Verify video generation across all models
