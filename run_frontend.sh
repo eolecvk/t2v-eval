@@ -71,3 +71,5 @@ cd frontend
 # Fix bug in OpenSora video resolution config [2024-09-24T17:00:00]
 
 # Update CogVideo prompts for diversity [2024-09-27T16:48:00]
+
+# Update PyramidFlow decoder checkpoint [2024-09-30T14:32:00]
