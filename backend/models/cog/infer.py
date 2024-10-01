@@ -20,3 +20,5 @@
 # Integrate OpenSora into run_inference.sh [2024-09-25T10:56:00]
 
 # Debug CogVideo tokenizer mismatch error [2024-09-28T10:31:00]
+
+# Test output quality for Mochi model v0.2 [2024-10-01T11:23:00]
