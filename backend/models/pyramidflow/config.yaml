@@ -20,3 +20,5 @@
 # Add OpenSora preset for 16:9 format [2024-09-24T14:43:00]
 
 # Enable multi-GPU inference for CogVideo [2024-09-28T10:37:00]
+
+# Add base inference loop for Mochi model [2024-10-01T14:09:00]
