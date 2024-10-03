@@ -112,3 +112,5 @@ echo "Completed run_inference.sh"
 # Fix CogVideo FPS output issue [2024-09-26T13:36:00]
 
 # Fix PyramidFlow memory leak on long prompts [2024-09-29T10:09:00]
+
+# Refactor model dispatch logic in run_inference.sh [2024-10-03T10:36:00]
