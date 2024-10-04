@@ -34,3 +34,4 @@
 - Update README with deployment instructions
 - Fix bug in S3 file naming logic
 - Refactor folder layout for consistency
+- Test full end-to-end generation and display
