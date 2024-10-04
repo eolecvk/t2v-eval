@@ -73,3 +73,5 @@ cd frontend
 # Update CogVideo prompts for diversity [2024-09-27T16:48:00]
 
 # Update PyramidFlow decoder checkpoint [2024-09-30T14:32:00]
+
+# Log GPU memory usage for each model [2024-10-04T10:07:00]
