@@ -73,3 +73,4 @@
 - Fix bug in S3 file naming logic
 - Refactor folder layout for consistency
 - Test full end-to-end generation and display
+- Polish final details before release
