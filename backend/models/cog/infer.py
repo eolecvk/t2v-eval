@@ -22,3 +22,5 @@
 # Debug CogVideo tokenizer mismatch error [2024-09-28T10:31:00]
 
 # Test output quality for Mochi model v0.2 [2024-10-01T11:23:00]
+
+# Upload test videos to S3 for all models [2024-10-05T14:47:00]
