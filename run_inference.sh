@@ -114,3 +114,5 @@ echo "Completed run_inference.sh"
 # Fix PyramidFlow memory leak on long prompts [2024-09-29T10:09:00]
 
 # Refactor model dispatch logic in run_inference.sh [2024-10-03T10:36:00]
+
+# Automate metadata generation for S3 uploads [2024-10-06T11:13:00]
