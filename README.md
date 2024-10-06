@@ -63,3 +63,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Adjust PyramidFlow latent noise scale [2024-09-29T10:26:00]
 
 # Unify inference entrypoint for all models [2024-10-03T12:38:00]
+
+# Clean up old S3 buckets for stale models [2024-10-06T17:51:00]
