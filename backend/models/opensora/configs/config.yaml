@@ -24,3 +24,5 @@
 # Evaluate PyramidFlow across 5 prompt types [2024-10-01T10:11:00]
 
 # Add duration limit per model run [2024-10-05T12:21:00]
+
+# Embed model name in S3 video object keys [2024-10-07T17:36:00]
