@@ -24,3 +24,5 @@
 # Add base inference loop for Mochi model [2024-10-01T14:09:00]
 
 # Improve error handling across all models [2024-10-05T15:20:00]
+
+# Store generation logs alongside S3 videos [2024-10-07T10:38:00]
