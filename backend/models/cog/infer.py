@@ -24,3 +24,5 @@
 # Test output quality for Mochi model v0.2 [2024-10-01T11:23:00]
 
 # Upload test videos to S3 for all models [2024-10-05T14:47:00]
+
+# Build grid layout for model comparison UI [2024-10-08T12:22:00]
