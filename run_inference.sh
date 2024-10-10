@@ -116,3 +116,5 @@ echo "Completed run_inference.sh"
 # Refactor model dispatch logic in run_inference.sh [2024-10-03T10:36:00]
 
 # Automate metadata generation for S3 uploads [2024-10-06T11:13:00]
+
+# Refactor frontend JS for modularity [2024-10-10T17:37:00]
