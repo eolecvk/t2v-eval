@@ -26,3 +26,5 @@
 # Add duration limit per model run [2024-10-05T12:21:00]
 
 # Embed model name in S3 video object keys [2024-10-07T17:36:00]
+
+# Add prompt hover tooltip to video thumbnails [2024-10-11T17:52:00]
