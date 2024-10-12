@@ -118,3 +118,5 @@ echo "Completed run_inference.sh"
 # Automate metadata generation for S3 uploads [2024-10-06T11:13:00]
 
 # Refactor frontend JS for modularity [2024-10-10T17:37:00]
+
+# Test frontend layout on smaller resolutions [2024-10-12T10:40:00]
