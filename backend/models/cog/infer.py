@@ -26,3 +26,5 @@
 # Upload test videos to S3 for all models [2024-10-05T14:47:00]
 
 # Build grid layout for model comparison UI [2024-10-08T12:22:00]
+
+# Optimize frontend load time by batching thumbnails [2024-10-12T12:43:00]
