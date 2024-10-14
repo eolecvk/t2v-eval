@@ -28,3 +28,5 @@
 # Embed model name in S3 video object keys [2024-10-07T17:36:00]
 
 # Add prompt hover tooltip to video thumbnails [2024-10-11T17:52:00]
+
+# Clarify AWS + HuggingFace setup steps in README [2024-10-14T16:02:00]
