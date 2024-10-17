@@ -81,3 +81,5 @@ cd frontend
 # Improve CSS for mobile responsiveness [2024-10-11T14:38:00]
 
 # Fix mismatch in prompt label rendering [2024-10-13T17:44:00]
+
+# Fix typo in installation instructions [2024-10-17T11:41:00]
