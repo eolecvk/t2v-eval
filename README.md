@@ -69,3 +69,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Implement lazy loading for videos on scroll [2024-10-09T18:20:00]
 
 # Add toggle for showing only recent generations [2024-10-12T18:42:00]
+
+# Create .env template with example values [2024-10-17T17:24:00]
