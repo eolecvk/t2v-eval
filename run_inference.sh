@@ -120,3 +120,5 @@ echo "Completed run_inference.sh"
 # Refactor frontend JS for modularity [2024-10-10T17:37:00]
 
 # Test frontend layout on smaller resolutions [2024-10-12T10:40:00]
+
+# Add notes on EC2 setup for deployment [2024-10-17T12:44:00]
