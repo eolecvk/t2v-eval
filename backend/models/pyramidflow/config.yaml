@@ -30,3 +30,5 @@
 # Fix video playback glitch on Chrome [2024-10-11T09:45:00]
 
 # Add usage example to README for inference script [2024-10-15T14:50:00]
+
+# Evaluate each model with identical prompt set [2024-10-18T18:13:00]
