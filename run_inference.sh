@@ -122,3 +122,5 @@ echo "Completed run_inference.sh"
 # Test frontend layout on smaller resolutions [2024-10-12T10:40:00]
 
 # Add notes on EC2 setup for deployment [2024-10-17T12:44:00]
+
+# Add cinematic scene prompts for realism comparison [2024-10-19T10:37:00]
