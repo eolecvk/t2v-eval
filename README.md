@@ -71,3 +71,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Add toggle for showing only recent generations [2024-10-12T18:42:00]
 
 # Create .env template with example values [2024-10-17T17:24:00]
+
+# Test long descriptive prompts across all models [2024-10-19T10:53:00]
