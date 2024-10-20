@@ -32,3 +32,5 @@
 # Document run_frontend.sh requirements [2024-10-15T09:35:00]
 
 # Refactor prompt input to support special tokens [2024-10-18T13:19:00]
+
+# Move common constants to shared config [2024-10-20T18:25:00]
