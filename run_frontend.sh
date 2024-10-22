@@ -85,3 +85,5 @@ cd frontend
 # Fix typo in installation instructions [2024-10-17T11:41:00]
 
 # Remove duplicate prompts from test set [2024-10-19T15:41:00]
+
+# Pin torch version for consistent inference results [2024-10-22T17:42:00]
