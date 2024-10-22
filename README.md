@@ -75,3 +75,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Test long descriptive prompts across all models [2024-10-19T10:53:00]
 
 # Add video resolution check to CI step [2024-10-20T18:28:00]
+
+# Add OpenSora inference script [2024-10-22T14:18:00]
