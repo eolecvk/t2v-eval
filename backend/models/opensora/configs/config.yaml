@@ -34,3 +34,5 @@
 # Add test prompts covering weather and lighting changes [2024-10-18T12:56:00]
 
 # Run black formatter on backend scripts [2024-10-19T18:00:00]
+
+# Optimize OpenSora batch size for faster inference [2024-10-23T15:59:00]
