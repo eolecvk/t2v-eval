@@ -77,3 +77,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Add video resolution check to CI step [2024-10-20T18:28:00]
 
 # Add OpenSora inference script [2024-10-22T14:18:00]
+
+# Refactor CogVideo inference pipeline [2024-10-24T12:45:00]
