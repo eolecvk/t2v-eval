@@ -128,3 +128,5 @@ echo "Completed run_inference.sh"
 # Fix bash permission on run_inference.sh [2024-10-21T15:28:00]
 
 # Tune OpenSora sampling rate for smoother motion [2024-10-22T09:59:00]
+
+# Fix CogVideo FPS output issue [2024-10-25T15:51:00]
