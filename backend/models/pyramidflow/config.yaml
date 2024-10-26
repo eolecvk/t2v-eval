@@ -36,3 +36,5 @@
 # Fix import warnings in utils.py [2024-10-20T14:34:00]
 
 # Add OpenSora preset for 16:9 format [2024-10-23T16:14:00]
+
+# Enable multi-GPU inference for CogVideo [2024-10-26T09:21:00]
