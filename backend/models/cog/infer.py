@@ -36,3 +36,5 @@
 # Move common constants to shared config [2024-10-20T18:25:00]
 
 # Integrate OpenSora into run_inference.sh [2024-10-23T13:18:00]
+
+# Debug CogVideo tokenizer mismatch error [2024-10-27T16:40:00]
