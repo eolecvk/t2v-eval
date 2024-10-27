@@ -79,3 +79,5 @@ Then, open your browser at http://<instance_IP>:8000/
 # Add OpenSora inference script [2024-10-22T14:18:00]
 
 # Refactor CogVideo inference pipeline [2024-10-24T12:45:00]
+
+# Adjust PyramidFlow latent noise scale [2024-10-27T13:18:00]
