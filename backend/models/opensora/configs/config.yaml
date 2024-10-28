@@ -38,3 +38,5 @@
 # Optimize OpenSora batch size for faster inference [2024-10-23T15:59:00]
 
 # Improve CogVideo consistency with fixed seed [2024-10-25T14:04:00]
+
+# Evaluate PyramidFlow across 5 prompt types [2024-10-28T12:32:00]
