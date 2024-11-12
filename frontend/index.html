@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>T2V-View</title>
+    <style>
+        /* Reset and basic styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            background-color: #1f1f1f;
+            flex: 0 0 auto;
+        }
+
+        .tab-buttons button {
+            flex: 1;
+            padding: 10px 0;
+            background-color: #7030C4; /* #7030C4 for the tab buttons */
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        .tab-buttons button:hover,
+        .tab-buttons button.active {
+            background-color: #5b249b; /* Slightly darker for hover/active state */
+        }
+
+        .page-title {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Left align */
+            color: #ffffff;
+            padding: 10px 20px;
+            background-color: #1f1f1f;
+            font-size: 24px;
+            flex: 0 0 auto;
+        }
+
+        .page-title img.logo {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+            background-color: #ffffff; /* White background for logo */
+            padding: 5px;
+            border-radius: 8px; /* Optional: adds a rounded border */
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            background-color: #1f1f1f;
+            padding: 10px 20px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .nav-links a {
+            color: #7030C4; /* Updated link color */
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links span {
+            margin: 0 10px;
+            color: #ffffff;
+        }
+
+        .tab-description {
+            background-color: #1f1f1f;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tab-description p {
+            margin: 0;
+            margin-right: 20px;
+        }
+
+        .tab-description .controls {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .tab-description .controls label {
+            margin-right: 10px;
+        }
+
+        .tab-description .controls select {
+            background-color: #1f1f1f;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 8px;
+            border-radius: 4px;
+            outline: none;
+            margin-right: 20px;
+        }
+
+        .tab {
+            display: none;
+            flex: 1 1 auto;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .active-tab {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .grid {
+            display: grid;
+            flex: 1 1 auto;
+            grid-template-columns: repeat(2, 1fr); /* Adjusted to 2 columns */
+            gap: 10px;
+            overflow-y: auto;
+            padding-bottom: 10px;
+        }
+
+        .grid-item {
+            text-align: center;
+            background-color: #1f1f1f;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .grid-item p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .video-container {
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 auto;
+            margin-top: 10px;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 8px 16px;
+            background-color: #7030C4; /* #7030C4 for pagination buttons */
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 14px;
+            outline: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:hover {
+            background-color: #5b249b; /* Darker hover state */
+        }
+
+        .pagination button[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination span {
+            font-size: 14px;
+        }
+
+        /* Additional styling for Prompt Side-by-Side */
+        .pair-container {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <!-- Include Papa Parse library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="tab-buttons">
+            <button id="model-view-btn" onclick="showTab('model-view')" class="active">Model preview</button>
+            <button id="prompt-view-btn" onclick="showTab('prompt-view')">Model side-by-side</button>
+            <button id="prompt-side-by-side-btn" onclick="showTab('prompt-side-by-side')">Prompt side-by-side</button>
+        </div>
+        <div class="page-title">
+            <img src="lambda.png" alt="Lambda Labs Logo" class="logo">
+            <span>T2V-View: visual evaluation for top text-to-video models</span>
+        </div>
+        <div class="nav-links">
+            <a href="https://eolecvk.github.io/t2v-eval.github.io/">Blog</a>
+            <span> |</span>
+            <a href="https://github.com/LambdaLabsML/text2vid-viewer">GitHub</a>
+            <span> |</span>
+            <a href="#">About</a>
+        </div>
+        <div id="tab-description" class="tab-description">
+            <!-- Content will be inserted here dynamically -->
+            <p id="description-text"></p>
+            <div id="model-controls" class="controls" style="display: none;">
+                <!-- <label for="model-select">Choose a Model:</label>-->
+                <select id="model-select" onchange="updateModelView(); updatePromptSideBySideView();"></select>
+            </div>
+            <div id="prompt-controls" class="controls" style="display: none;">
+                <!-- <label for="prompt-select">Choose a Prompt:</label>-->
+                <select id="prompt-select" onchange="updatePromptView()"></select>
+            </div>
+        </div>
+
+        <!-- Model View Tab -->
+        <div id="model-view" class="tab active-tab">
+            <div id="model-grid" class="grid"></div>
+            <div class="pagination">
+                <button id="model-prev-btn" onclick="prevPage('model')">Previous</button>
+                <span id="model-page-indicator">Page 1</span>
+                <button id="model-next-btn" onclick="nextPage('model')">Next</button>
+            </div>
+        </div>
+
+        <!-- Prompt View Tab -->
+        <div id="prompt-view" class="tab">
+            <div id="prompt-grid" class="grid"></div>
+            <div class="pagination">
+                <button id="prompt-prev-btn" onclick="prevPrompt()">Previous Prompt</button>
+                <span id="prompt-page-indicator">Prompt 1</span>
+                <button id="prompt-next-btn" onclick="nextPrompt()">Next Prompt</button>
+            </div>
+        </div>
+
+        <!-- Prompt Side-by-Side Tab -->
+        <div id="prompt-side-by-side" class="tab">
+            <div id="prompt-side-by-side-grid" class="grid"></div>
+            <div class="pagination">
+                <button id="prompt-side-by-side-prev-btn" onclick="prevPage('prompt-side-by-side')">Previous</button>
+                <span id="prompt-side-by-side-page-indicator">Page 1</span>
+                <button id="prompt-side-by-side-next-btn" onclick="nextPage('prompt-side-by-side')">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const bucketName = "text2videoviewer";
+        let videoData = [];
+        let modelPage = 1;
+        let promptSideBySidePage = 1;
+        const itemsPerPage = 4; // Adjusted for 2 columns
+        let prompts = [];
+        let currentPromptIndex = 0;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadCSVData('db.csv');
+            showTab('model-view');
+        });
+
+        function loadCSVData(csvFile) {
+            fetch(csvFile)
+                .then(response => response.text())
+                .then(data => {
+                    parseCSVData(data);
+                    populateDropdowns();
+                    updateModelView(); // Automatically render videos for the selected model when page loads
+                })
+                .catch(error => console.error('Error loading CSV:', error));
+        }
+
+        function parseCSVData(csv) {
+            Papa.parse(csv, {
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    videoData = results.data.map(row => {
+                        try {
+                            const model = row.model.trim();
+                            const prompt = row.prompt.trim();
+                            const base_prompt = row.base_prompt.trim();
+                            const object_name = row.object_name.trim();
+                            //const location = `https://${bucketName}.s3.amazonaws.com/${encodeURIComponent(object_name)}`;
+                            const location = `https://d33195xzb21qs9.cloudfront.net/${encodeURIComponent(object_name)}`;
+                            return { model, prompt, base_prompt, location };
+                        } catch (error) {
+                            console.error('Error processing row:', row, error);
+                            return null;
+                        }
+                    }).filter(item => item !== null);
+                },
+                error: function(error) {
+                    console.error('Error parsing CSV:', error);
+                }
+            });
+        }
+
+        function populateDropdowns() {
+            const models = [...new Set(videoData.map(video => video.model))];
+            prompts = [...new Set(videoData.map(video => video.prompt))];
+            const modelSelect = document.getElementById("model-select");
+            const promptSelect = document.getElementById("prompt-select");
+
+            // Populate Model View dropdown
+            models.forEach(model => {
+                const option = document.createElement("option");
+                option.value = model;
+                option.textContent = model;
+                modelSelect.appendChild(option);
+            });
+
+            // Populate Prompt View dropdown
+            prompts.forEach((prompt, index) => {
+                const option = document.createElement("option");
+                option.value = prompt;
+                option.textContent = prompt;
+                promptSelect.appendChild(option);
+            });
+        }
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            document.getElementById(tabId).classList.add('active-tab');
+
+            document.querySelectorAll('.tab-buttons button').forEach(button => {
+                button.classList.remove('active');
+            });
+            const tabDescription = document.getElementById('tab-description');
+            const descriptionText = document.getElementById('description-text');
+            const modelControls = document.getElementById('model-controls');
+            const promptControls = document.getElementById('prompt-controls');
+
+            if (tabId === 'model-view') {
+                document.getElementById('model-view-btn').classList.add('active');
+                modelPage = 1; // Reset page number when switching tabs
+                updateModelView();
+                descriptionText.innerHTML = '<b>The model preview mode shows outputs for a variety of prompts for the selected model:</b>';
+                modelControls.style.display = 'flex';
+                promptControls.style.display = 'none';
+            }
+            if (tabId === 'prompt-view') {
+                document.getElementById('prompt-view-btn').classList.add('active');
+                updatePromptView();
+                descriptionText.innerHTML = '<b>Side-by-side output comparison of the top models for the selected prompt:</b>';
+                modelControls.style.display = 'none';
+                promptControls.style.display = 'flex';
+            }
+            if (tabId === 'prompt-side-by-side') {
+                document.getElementById('prompt-side-by-side-btn').classList.add('active');
+                promptSideBySidePage = 1; // Reset page number when switching tabs
+                updatePromptSideBySideView();
+                descriptionText.innerHTML = '<b>Side-by-side output comparison before and after densification, for the selected model:</b>';
+                modelControls.style.display = 'flex';
+                promptControls.style.display = 'none';
+            }
+        }
+
+        function updateModelView() {
+            const selectedModel = document.getElementById("model-select").value;
+            const modelGrid = document.getElementById("model-grid");
+            modelGrid.innerHTML = ""; // Clear previous content
+
+            const filteredVideos = videoData.filter(video => video.model === selectedModel);
+            const paginatedVideos = paginate(filteredVideos, modelPage, itemsPerPage);
+            paginatedVideos.forEach(video => {
+                const gridItem = document.createElement("div");
+                gridItem.className = "grid-item";
+
+                const videoContainer = document.createElement("div");
+                videoContainer.className = "video-container";
+
+                const videoElement = document.createElement("video");
+                videoElement.src = video.location;
+                videoElement.loop = true;
+                videoElement.muted = true;
+                videoElement.autoplay = true;
+                videoElement.addEventListener('loadeddata', () => {
+                    videoContainer.style.backgroundColor = 'transparent'; // Remove placeholder background after video loads
+                });
+
+                const promptLabel = document.createElement("p");
+                promptLabel.textContent = video.prompt;
+
+                videoContainer.appendChild(videoElement);
+                gridItem.appendChild(videoContainer);
+                gridItem.appendChild(promptLabel);
+                modelGrid.appendChild(gridItem);
+            });
+
+            document.getElementById('model-page-indicator').textContent = `Page ${modelPage}`;
+
+            // Disable next/prev buttons if there are no more pages
+            document.getElementById('model-prev-btn').disabled = modelPage <= 1;
+            document.getElementById('model-next-btn').disabled = modelPage * itemsPerPage >= filteredVideos.length;
+        }
+
+        function updatePromptView() {
+            const promptSelect = document.getElementById("prompt-select");
+            const selectedPrompt = promptSelect.value;
+            currentPromptIndex = promptSelect.selectedIndex;
+            const promptGrid = document.getElementById("prompt-grid");
+            promptGrid.innerHTML = ""; // Clear previous content
+
+            const filteredVideos = videoData.filter(video => video.prompt === selectedPrompt);
+            filteredVideos.forEach(video => {
+                const gridItem = document.createElement("div");
+                gridItem.className = "grid-item";
+
+                const videoContainer = document.createElement("div");
+                videoContainer.className = "video-container";
+
+                const videoElement = document.createElement("video");
+                videoElement.src = video.location;
+                videoElement.loop = true;
+                videoElement.muted = true;
+                videoElement.autoplay = true;
+                videoElement.addEventListener('loadeddata', () => {
+                    videoContainer.style.backgroundColor = 'transparent';
+                });
+
+                const modelLabel = document.createElement("p");
+                modelLabel.textContent = video.model;
+
+                videoContainer.appendChild(videoElement);
+                gridItem.appendChild(videoContainer);
+                gridItem.appendChild(modelLabel);
+                promptGrid.appendChild(gridItem);
+            });
+
+            document.getElementById('prompt-page-indicator').textContent = `Prompt ${currentPromptIndex + 1} of ${prompts.length}`;
+
+            // Disable prev/next buttons if at the start/end
+            document.getElementById('prompt-prev-btn').disabled = currentPromptIndex <= 0;
+            document.getElementById('prompt-next-btn').disabled = currentPromptIndex >= prompts.length - 1;
+        }
+
+        function updatePromptSideBySideView() {
+            const selectedModel = document.getElementById("model-select").value;
+            const grid = document.getElementById("prompt-side-by-side-grid");
+            grid.innerHTML = "";
+
+            // Filter videos by selected model
+            const videosByModel = videoData.filter(video => video.model === selectedModel);
+
+            // Find pairs where videoA.prompt matches videoB.base_prompt
+            const pairs = [];
+            for (let i = 0; i < videosByModel.length; i++) {
+                const videoA = videosByModel[i];
+                for (let j = 0; j < videosByModel.length; j++) {
+                    const videoB = videosByModel[j];
+                    if (videoA.prompt === videoB.base_prompt) {
+                        pairs.push({ videoA, videoB });
+                    }
+                }
+            }
+
+            // Remove duplicates
+            const uniquePairs = [];
+            const seen = new Set();
+            pairs.forEach(pair => {
+                const key = pair.videoA.location + '-' + pair.videoB.location;
+                if (!seen.has(key)) {
+                    uniquePairs.push(pair);
+                    seen.add(key);
+                }
+            });
+
+            // Paginate the pairs
+            const paginatedPairs = paginate(uniquePairs, promptSideBySidePage, 2); // Adjusted for 2 columns
+
+            paginatedPairs.forEach(pair => {
+                // Create a container for the pair
+                const pairContainer = document.createElement("div");
+                pairContainer.className = "pair-container grid-item";
+
+                // First video
+                const gridItemA = document.createElement("div");
+                gridItemA.className = "grid-item";
+
+                const videoContainerA = document.createElement("div");
+                videoContainerA.className = "video-container";
+
+                const videoElementA = document.createElement("video");
+                videoElementA.src = pair.videoA.location;
+                videoElementA.loop = true;
+                videoElementA.muted = true;
+                videoElementA.autoplay = true;
+                videoElementA.addEventListener('loadeddata', () => {
+                    videoContainerA.style.backgroundColor = 'transparent';
+                });
+
+                const promptLabelA = document.createElement("p");
+                promptLabelA.textContent = pair.videoA.prompt;
+
+                videoContainerA.appendChild(videoElementA);
+                gridItemA.appendChild(videoContainerA);
+                gridItemA.appendChild(promptLabelA);
+
+                // Second video
+                const gridItemB = document.createElement("div");
+                gridItemB.className = "grid-item";
+
+                const videoContainerB = document.createElement("div");
+                videoContainerB.className = "video-container";
+
+                const videoElementB = document.createElement("video");
+                videoElementB.src = pair.videoB.location;
+                videoElementB.loop = true;
+                videoElementB.muted = true;
+                videoElementB.autoplay = true;
+                videoElementB.addEventListener('loadeddata', () => {
+                    videoContainerB.style.backgroundColor = 'transparent';
+                });
+
+                const promptLabelB = document.createElement("p");
+                promptLabelB.textContent = pair.videoB.prompt;
+
+                videoContainerB.appendChild(videoElementB);
+                gridItemB.appendChild(videoContainerB);
+                gridItemB.appendChild(promptLabelB);
+
+                // Append both grid items to the pair container
+                pairContainer.appendChild(gridItemA);
+                pairContainer.appendChild(gridItemB);
+
+                // Append the pair container to the grid
+                grid.appendChild(pairContainer);
+            });
+
+            document.getElementById('prompt-side-by-side-page-indicator').textContent = `Page ${promptSideBySidePage}`;
+
+            // Disable next/prev buttons if there are no more pages
+            document.getElementById('prompt-side-by-side-prev-btn').disabled = promptSideBySidePage <= 1;
+            document.getElementById('prompt-side-by-side-next-btn').disabled = promptSideBySidePage * 2 >= uniquePairs.length;
+        }
+
+        function nextPrompt() {
+            if (currentPromptIndex < prompts.length - 1) {
+                currentPromptIndex++;
+                document.getElementById("prompt-select").selectedIndex = currentPromptIndex;
+                updatePromptView();
+            }
+        }
+
+        function prevPrompt() {
+            if (currentPromptIndex > 0) {
+                currentPromptIndex--;
+                document.getElementById("prompt-select").selectedIndex = currentPromptIndex;
+                updatePromptView();
+            }
+        }
+
+        function paginate(array, pageNumber, pageSize) {
+            return array.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+        }
+
+        function nextPage(view) {
+            if (view === 'model') {
+                modelPage++;
+                updateModelView();
+            } else if (view === 'prompt-side-by-side') {
+                promptSideBySidePage++;
+                updatePromptSideBySideView();
+            }
+        }
+
+        function prevPage(view) {
+            if (view === 'model' && modelPage > 1) {
+                modelPage--;
+                updateModelView();
+            } else if (view === 'prompt-side-by-side' && promptSideBySidePage > 1) {
+                promptSideBySidePage--;
+                updatePromptSideBySideView();
+            }
+        }
+    </script>
+</body>
+</html>
